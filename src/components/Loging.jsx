@@ -1,41 +1,9 @@
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import { useState } from "react";
 
-const URL = "https://backend-dummy.hospitaldeespecialidades.com.sv"
-const Loging = () => {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const [loging, setLoging] = useState(false);
-  const [token, setToken] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
-      usuario: user,
-      password: password,
-    };
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
 
-    let raw = JSON.stringify(data)
-    let requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    }
-    console.log(data)
-    fetch(`${URL}/api/auth/login`, requestOptions)
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          setLoging(true);
-          setToken(res.token);
-          localStorage.setItem("HenspToken", res.token);
-        }
-      })
-      .catch((err) => console.log(err));
-  }
+
+const Loging = ({handleSubmit, user, password, setPassword, setUser}) => {
 
   const handleUser = (e) => {
     setUser(e.target.value)
