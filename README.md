@@ -1,53 +1,70 @@
-# HENSP Frontend Test
+# Getting Started with Create React App
 
-### Resumen
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-En esta prueba deberás realizar una interfaz sencilla que consume un backend previamente realizado.
+## Available Scripts
 
-### Alcance
+In the project directory, you can run:
 
-Tienes un máximo de **3 horas** para la prueba.
+### `npm start`
 
-### Historias de Usuario (requerimientos)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- Como invitado, quiero iniciar sesión dentro de la plataforma.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- Como usuario autenticado, quiero obtener una lista de todos los medicamentos disponibles en el área de farmacia, para poder consultar el nombre, proveedor, costo y precio de venta dentro de una tabla.
+### `npm test`
 
-- Como usuario autenticado, quiero agregar nuevos medicamentos al área de farmacia.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Como usuario autenticado, quiero editar la información de un medicamento del área de farmacia.
+### `npm run build`
 
-- Como usuario autenticado, quiero eliminar un medicamento del área de farmacia.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Información técnica
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-La aplicación debe ser realizada con React, de preferencia como una Single Page Application (SPA).
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Puedes utilizar librerias de UI para la aplicación, de preferencia React-Bootstrap. El diseño queda a tu criterio :)
+### `npm run eject`
 
-La documentación del Backend se encuentra en https://backend-dummy.hospitaldeespecialidades.com.sv/docs. _(Por favor no borres todos los datos, recuerda que más de una persona trabajará con este API)_
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Nota: Durante el login recibirás un token, éste debe ser enviado en los endpoints para crear, actualizar y eliminar en los headers asi: `Authorization: Bearer <token>`
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Entregable
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Al finalizar la prueba, deberás hacer un Pull Request en el repositorio. Si tu username de Github no puede ser fácilmente reconocible, por favor coloca tu nombre en la descripción. 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Puedes agregar toda la información que consideres ideal para el PR.
+## Learn More
 
-_* Recuerda que para hacer un PR debes hacer un fork a este repositorio y clonarlo. Debes trabajar sobre éste para que sea posible_
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Puntos Extras
+### Code Splitting
 
-La siguiente lista de requerimientos únicamente incrementan tu puntaje, no pasa nada si no los haces.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-- Utiliza _conventional commits_ para escribir tus mensajes en git.
-- Diseño responsive.
-- Utiliza Typescript.
-- Implementa paginación.
-- Utiliza libreria para manejo de estado.
-- Filtro de búsqueda por nombre en lista de medicamentos _(puedes usar limit=999 para obtenerlos todos, doble punto si funciona con keywords)_
-- Manejo de errores 400 (bad payload), 401 (unauthorized) y 403 (forbidden).
-- Tests unitarios o e2e.
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
