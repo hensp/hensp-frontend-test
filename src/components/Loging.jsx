@@ -1,9 +1,45 @@
-import { Col, Container, Row, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 
 
 
-const Loging = ({handleSubmit, user, password, setPassword, setUser}) => {
+// eslint-disable-next-line react/prop-types
+const Loging = ({ setToken, setLoging }) => {
+
+  const URL = "https://backend-dummy.hospitaldeespecialidades.com.sv"
+
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      usuario: user,
+      password: password,
+    };
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let raw = JSON.stringify(data)
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    }
+    console.log(data)
+    fetch(`${URL}/api/auth/login`, requestOptions)
+      .then((res) => {
+        if(res.status === 201) return res.json()
+        throw new Error('Invalid credentials')
+      })
+      .then((res) => {
+        localStorage.setItem("token", JSON.stringify(res.token))
+        setLoging(true);
+        setToken(res.token)
+      })
+      .catch((err) => console.log(err));
+  }
 
   const handleUser = (e) => {
     setUser(e.target.value)
