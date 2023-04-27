@@ -3,21 +3,14 @@ import { Col, Table, Row, Form, Button, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Medicamento from './Medicamento'
 import FormMedicamentos from './FormMedicamentos'
+import HTTP from './Request'
 const ListaMedicamentos = ({token}) => {
 
   const [medicamentos, setMedicamentos] = useState([])
   const [modalShow, setModalShow] = useState(false);
   // const [token, setToken] = useState(currentToken => currentToken = JSON.parse(localStorage.getItem("token")))
   useEffect(() => {
-    let myHeaders = new Headers()
-    myHeaders.append("Authorization", "Bearer " + token)
-    let requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-      redirect: 'follow'
-    }
-    fetch("https://backend-dummy.hospitaldeespecialidades.com.sv/api/medicamentos", requestOptions)
-      .then(response => response.json())
+    HTTP.get('medicamentos')
       .then(result => {
         console.log(result)
         setMedicamentos(result.medicamento)
