@@ -12,12 +12,9 @@ function DrugList() {
   // READ OPERATION
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        'https://backend-dummy.hospitaldeespecialidades.com.sv/api/medicamentos',
-        {
-          headers: { Authorization: `Bearer ${accessToken}` },
-        }
-      );
+      const response = await fetch(`${BASE_URL}`, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
       const data = await response.json();
       setDrugs(data.medicamento);
       console.log(data.medicamento);
@@ -26,55 +23,24 @@ function DrugList() {
     }
   };
 
-  // CREATE OPERATION
-  const createProduct = async ({ nombre, proveedor, costo, precioVenta }) => {
+  const sendRequest = async ({ method, path = '', body }, message) => {
     try {
-      const response = await fetch(`${BASE_URL}`, {
-        method: 'POST',
+      const response = await fetch(`${BASE_URL}/${path}`, {
+        method,
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${accessToken}`,
         },
-        body: JSON.stringify({ nombre, proveedor, costo, precioVenta }),
+        body: body ? JSON.stringify(body) : null,
       });
-      const data = await response.json();
-      console.log('POST', response.status, data);
-      if (response.ok) {
-        show_alert('Producto guardado', 'success');
-        document.getElementById('btnClose').click();
-        fetchData();
-      } else {
-        show_alert('Error en la solicitud', 'error');
-      }
-    } catch (error) {
-      show_alert('Error en la solicitud', 'error');
-      console.error(error);
-    }
-  };
 
-  // UPDATE OPERATION
-  const updateProduct = async ({
-    id,
-    nombre,
-    proveedor,
-    costo,
-    precioVenta,
-  }) => {
-    try {
-      const response = await fetch(`${BASE_URL}/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({ nombre, proveedor, costo, precioVenta }),
-      });
       const data = await response.json();
-      console.log('POST', response.status, data);
+      console.log(`${method}`, response.status, data);
+
       if (response.ok) {
-        fetchData();
-        show_alert('Producto actualizado', 'success');
+        show_alert(`Producto ${message}`, 'success');
         document.getElementById('btnClose').click();
+        fetchData();
       }
     } catch (error) {
       show_alert('Error en la solicitud', 'error');
@@ -92,27 +58,10 @@ function DrugList() {
       showCancelButton: true,
       cancelButtonText: 'Cancelar',
       confirmButtonText: 'Sí, eliminar',
-    }).then(async (result) => {
+    }).then((result) => {
       if (result.isConfirmed) {
         setId(id);
-        try {
-          const response = await fetch(`${BASE_URL}/${id}`, {
-            method: 'DELETE',
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${accessToken}`,
-            },
-          });
-          console.log('DELETE', response);
-          if (response.ok) {
-            fetchData();
-            show_alert('Producto eliminado', 'success');
-            document.getElementById('btnClose').click();
-          }
-        } catch (error) {
-          show_alert('Error en la solicitud', 'error');
-          console.error(error);
-        }
+        sendRequest({ method: 'DELETE', path: id.toString() }, 'eliminado');
       } else {
         show_alert('El producto NO fue eliminado', 'info');
       }
@@ -167,20 +116,32 @@ function DrugList() {
       show_alert(`Escribe el proveedor del medicamento`);
     } else {
       if (operation === 1) {
-        createProduct({
-          nombre: name.trim(),
-          proveedor: supplier.trim(),
-          costo: Number.parseInt(cost),
-          precioVenta: Number.parseInt(salePrice),
-        });
+        sendRequest(
+          {
+            method: 'POST',
+            body: {
+              nombre: name.trim(),
+              proveedor: supplier.trim(),
+              costo: Number.parseInt(cost),
+              precioVenta: Number.parseInt(salePrice),
+            },
+          },
+          'guardado'
+        );
       } else {
-        updateProduct({
-          id,
-          nombre: name.trim(),
-          proveedor: supplier,
-          costo: Number.parseInt(cost),
-          precioVenta: Number.parseInt(salePrice),
-        });
+        sendRequest(
+          {
+            method: 'PUT',
+            body: {
+              nombre: name.trim(),
+              proveedor: supplier.trim(),
+              costo: Number.parseInt(cost),
+              precioVenta: Number.parseInt(salePrice),
+            },
+            path: id.toString(),
+          },
+          'actualizado'
+        );
       }
     }
   };
