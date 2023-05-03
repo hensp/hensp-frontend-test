@@ -1,0 +1,138 @@
+
+
+
+section.formUser1{
+    width: 100%;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.formUser1 .title{
+    width: 100%;
+    height: 5vw;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.formUser1 .title .interno{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+section.formUser1 .title .interno p{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    color: #8d8d8d;
+    font-size: 1.5vw;
+    font-family: Roboto8;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+section.formUser1 .content{
+    width: 100%;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* Tabla */
+
+
+.formUser1 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10vw;
+  }
+  
+  .formUser1 th,
+  .formUser1 td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .formUser1 th {
+    background-color: #f2f2f2;
+    font-size: 1.5vw;
+    font-family: Roboto8;
+    color: #8d8d8d;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .formUser1 input[type="text"] {
+    width: 100%;
+    border: none;
+    background-color: #f2f2f2;
+    padding: 8px;
+    font-size: 1.5vw;
+    font-family: Roboto8;
+    color: #8d8d8d;
+    border-radius: 4px;
+  }
+  
+  .formUser1 button[type="submit"].update {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.5vw;
+    font-family: Roboto8;
+    cursor: pointer;
+  }
+  
+  .formUser1 button[type="submit"].update:hover {
+    background-color: #3e8e41;
+  }
+
+  .formUser1 button[type="submit"].borrar {
+    background-color: #ff0000;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.5vw;
+    font-family: Roboto8;
+    cursor: pointer;
+  }
+  
+  .formUser1 button[type="submit"].borrar:hover {
+    background-color: #bb0000;
+  }
+
+
+  .formUser1 button[type="submit"].create {
+    background-color: #ff9100;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.5vw;
+    font-family: Roboto8;
+    cursor: pointer;
+  }
+  
+  .formUser1 button[type="submit"].create:hover {
+    background-color: #ca7a12;
+  }
+  

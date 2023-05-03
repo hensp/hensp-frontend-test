@@ -1,0 +1,250 @@
+
+
+
+section.header{
+    width: 100%;
+    height: 12%;
+    left: 0;
+    top: 0;
+    float: left;
+    overflow: hidden;
+    position: fixed;
+    background: #ffffff;
+    z-index: 10;
+}
+
+
+/* Container1 ---------- */
+
+
+section.header .container1{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Container1.containerMenu ---------- */
+
+
+section.header .container1 .containerMenu{
+    width: 5%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.header .container1 .containerMenu .menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.header .container1 .containerMenu .menu i{
+    width: auto;
+    height: auto;
+    font-size: 4vh;
+    cursor: pointer;
+}
+
+
+/* Container1.containerLogo ---------- */
+
+
+section.header .container1 .containerLogo{
+    width: 95%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.header .container1 .containerLogo .logo{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+section.header .container1 .containerLogo .logo p{
+    width: auto;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    transform: translate(-0%,-0%);
+    font-size: 3.74vh;
+    font-family: inherit;
+    font-family: Roboto3;
+}
+
+section.header .container1 .containerLogo .region{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+section.header .container1 .containerLogo .region small{
+    width: auto;
+    height: auto;
+    top: -15%;
+    left: 0%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    transform: translate(-0%,-0%);
+    font-size: 1.9vh;
+    font-family: Roboto8;
+    color: #ababab;
+}
+
+
+
+/* Container2 ---------- */
+
+
+section.header .container2{
+    width: 30vh;
+    height: 88%;
+    left: 0;
+    top: 12%;
+    float: left;
+    position: fixed;
+    overflow: hidden;
+    background: #ffffff;
+    transition: 0.3s;
+    transform: translate(-100%,-0%);
+}
+
+section.header .container2.extend{
+    transform: translate(0%,-0%);
+    transition: 0.3s;
+}
+
+section.header .container2 .containerList{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+section.header .container2 .containerList ul{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+section.header .container2 .containerList ul li{
+    width: 100%;
+    height: 10vh;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 1vw;
+}
+
+section.header .container2 .containerList ul li .containerBoton{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+section.header .container2 .containerList ul li .containerBoton:hover{
+    border-radius: 1.2vw;
+    background: #dadada;
+}
+
+
+/* Container2.containerBoton.containerIcon ---------- */
+
+
+section.header .container2 .containerList ul li .containerBoton .containerIcon{
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+section.header .container2 .containerList ul li .containerBoton .containerIcon .icon{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.header .container2 .containerList ul li .containerBoton .containerIcon .icon i{
+    width: auto;
+    height: auto;
+    font-size: 3vh;
+    color: #a2a2a2;
+}
+
+
+/* Container2.containerBoton.containerText ---------- */
+
+section.header .container2 .containerList ul li .containerBoton .containerText{
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding-right: 1vw;
+}
+
+section.header .container2 .containerList ul li .containerBoton .containerText .text{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+}
+
+section.header .container2 .containerList ul li .containerBoton .containerText .text p{
+    width: 100%;
+    height: auto;
+    font-size: 2.4vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000000;
+}
+
+
+
+/* UTILIZADO PARA CENTRAR EL LOGO Y REGION */
+
+.CC{
+    width: inherit;
+    height: inherit;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------------- */

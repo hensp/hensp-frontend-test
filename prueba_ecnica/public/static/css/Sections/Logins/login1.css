@@ -1,0 +1,73 @@
+
+
+
+
+
+
+
+
+
+section.login1{
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.login1 .containerScreen{
+    width: 60%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.login1 .containerScreen .containerImage{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.login1 .containerScreen .containerImage img{
+    width: 102%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+}
+
+section.login1 .containerLogin{
+    width: 40%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.login1 .containerLogin .login{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

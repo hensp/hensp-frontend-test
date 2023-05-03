@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+section.targetaForm1 form{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+section.targetaForm1 form .formInputs{
+    width: 100%;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.targetaForm1 form .formInputs .containerData{
+    width: 100%;
+    height: 7vw;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1vw;
+}
+
+section.targetaForm1 form .formInputs .containerData .inpuTitle{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+section.targetaForm1 form .formInputs .containerData .inpuTitle label{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    color: #7e7e7e;
+    font-size: 1.1vw;
+    font-family: Roboto8;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+section.targetaForm1 form .formInputs .containerData .inpuHTML{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+section.targetaForm1 form .formInputs .containerData .inpuHTML input{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: 1vw;
+    padding-left: 1.5%;
+    color: #000000;
+    font-family: Roboto8;
+    border: 0.2vw solid #dfdfdf;
+}
+
+section.targetaForm1 form .formInputs .containerData .inpuHTML input{
+    color: #b6b6b6;
+    font-family: Roboto8;
+}
+
+section.targetaForm1 form .formSubmit{
+    width: 100%;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.targetaForm1 form .formSubmit .containerData{
+    width: 100%;
+    height: 6vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+section.targetaForm1 form .formSubmit .containerData button{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-top-left-radius: 1.5vw;
+    border-bottom-right-radius: 1.5vw;
+    background: #088de0;
+    color: #ffffff;
+    font-family: Roboto8;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* USADO EN login.html ------------------------------------------------------------------------- */
+
+section.targetaLogin1 section.targetaForm1 form .formSubmit .containerData{
+    justify-content: center;
+    padding-top: 1.2vw;
+    padding-bottom: 1.2vw;
+}
+
+section.targetaLogin1 section.targetaForm1 form .formSubmit .containerData button{
+    border-radius: 1vw;
+}
+
+/* --------------------------------------------------------------------------------------------- */

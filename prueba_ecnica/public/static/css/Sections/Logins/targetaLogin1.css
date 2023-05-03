@@ -1,0 +1,117 @@
+
+
+
+
+
+
+
+
+
+section.targetaLogin1{
+    width: 30vw;
+    height: 35vw;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    border-radius: 2vw;
+}
+
+section.targetaLogin1 .title{
+    width: 100%;
+    height: 20%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.targetaLogin1 .title .interno{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.targetaLogin1 .title .interno p{
+    width: auto;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.5vw;
+    font-family: Roboto8;
+}
+
+section.targetaLogin1 .formulario{
+    width: 100%;
+    height: 65%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+section.targetaLogin1 .signup{
+    width: 100%;
+    height: 15%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    border-top: 0.1vw solid #e8e8e8;
+}
+
+section.targetaLogin1 .signup .title{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.targetaLogin1 .signup .title p{
+    width: auto;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+section.targetaLogin1 .signup .title p a{
+    width: auto;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin-left: 0.2vw;
+    color: #1c8aff;
+}
+
+section.targetaLogin1 .signup .title p a:link{
+    color: #1c8aff;
+}
