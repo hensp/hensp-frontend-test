@@ -79,7 +79,7 @@ section.formUser1 .content{
     text-overflow: ellipsis;
   }
   
-  .formUser1 input[type="text"] {
+  .formUser1 input {
     width: 100%;
     border: none;
     background-color: #f2f2f2;
@@ -121,7 +121,7 @@ section.formUser1 .content{
   }
 
 
-  .formUser1 button[type="submit"].create {
+  .formUser1 button.create {
     background-color: #ff9100;
     color: white;
     padding: 8px 16px;
@@ -132,7 +132,7 @@ section.formUser1 .content{
     cursor: pointer;
   }
   
-  .formUser1 button[type="submit"].create:hover {
+  .formUser1 button.create:hover {
     background-color: #ca7a12;
   }
   
