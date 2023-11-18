@@ -19,7 +19,7 @@ export const Home = (): JSX.Element => {
   })
   const [variant, setVariant] = useState<'add' | 'update'>('add')
 
-  const { newUser } = useContext(AuthContext)
+  const { newUser, handleLogout } = useContext(AuthContext)
 
   const { medicine, handleLoading, loading, setSearchTerm, fetchMedicine } = useGetMedicines()
 
@@ -82,6 +82,9 @@ export const Home = (): JSX.Element => {
 
   return (
     <section className={styles.home}>
+      <section>
+      <button onClick={handleLogout}>Log out</button>
+      </section>
 
       <Search setSearchTerm ={setSearchTerm} fetchMedicine={fetchMedicine}/>
 

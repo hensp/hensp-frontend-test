@@ -4,6 +4,7 @@ import { type UserTypes } from '../types/user'
 interface AuthProviderTypes {
   newUser: UserTypes
   handleUser: (user: UserTypes) => void
+  handleLogout: () => void
 }
 
 interface AuthProviderProps {
@@ -19,7 +20,8 @@ export const AuthContext = createContext<AuthProviderTypes>({
       username: ''
     }
   },
-  handleUser: () => {}
+  handleUser: () => {},
+  handleLogout: () => {}
 })
 
 export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
@@ -29,8 +31,12 @@ export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
     setNewUser(user)
   }
 
+  const handleLogout = (): void => {
+    setNewUser(null)
+  }
+
   return (
-        <AuthContext.Provider value={{ newUser, handleUser }}>
+        <AuthContext.Provider value={{ newUser, handleUser, handleLogout }}>
             {children}
         </AuthContext.Provider>
   )
