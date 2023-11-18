@@ -1,10 +1,14 @@
 import { useContext, useState } from 'react'
 import { type medicineForm } from '../../types/medicineForm'
 import { AuthContext } from '../../context/AuthContext'
-import { postMedicine } from '../../services/medicine'
+
 import styles from './createMedicine.module.css'
 
-export const CreateMedicine = (): JSX.Element => {
+interface CreateMedicineProps {
+  onMedicine: (medicine: medicineForm) => Promise<void>
+}
+
+export const CreateMedicine = ({ onMedicine }: CreateMedicineProps): JSX.Element => {
   const [formMedicine, setFormMedicine] = useState<medicineForm>({
     nombre: '',
     proveedor: '',
@@ -18,15 +22,24 @@ export const CreateMedicine = (): JSX.Element => {
     const { name, value } = e.target
     setFormMedicine({
       ...formMedicine,
-      [name]: name === 'costo' || name === 'precioVenta' ? parseInt(value) : value
+      [name]: value
     })
   }
 
   const handleAddMedicine = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
-    if (newUser !== null) {
-      const response = await postMedicine(formMedicine, newUser?.token)
-      console.log(response)
+    try {
+      if (newUser !== null) {
+        await onMedicine(formMedicine)
+        setFormMedicine({
+          nombre: '',
+          proveedor: '',
+          costo: 0,
+          precioVenta: 0
+        })
+      }
+    } catch (error: any) {
+      throw new Error(error)
     }
   }
 

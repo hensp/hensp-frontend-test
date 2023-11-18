@@ -26,17 +26,31 @@ export const UpdateMedicine = ({ medicine, editMedicine, handleChangeVariant }: 
     const { name, value } = e.target
     setFormMedicine({
       ...formMedicine,
-      [name]: name === 'costo' || name === 'precioVenta' ? parseInt(value) : value
+      [name]: value
     })
   }
+
   const handleUpdateMedicine = async (e: React.FormEvent<HTMLFormElement>, id: number): Promise<void> => {
     e.preventDefault()
-    if (newUser !== null) {
-      const response = await putMedicine(id, newUser.token, formMedicine)
-      console.log(response)
-      if (response !== null) {
+
+    const newMedicine = {
+      nombre: formMedicine.nombre,
+      proveedor: formMedicine.proveedor,
+      costo: Number(formMedicine.costo),
+      precioVenta: Number(formMedicine.precioVenta)
+    }
+
+    try {
+      if (newUser !== null) {
+        const response = await putMedicine(id, newUser.token, newMedicine)
+        if (response.ok !== null) {
+          handleChangeVariant()
+        }
+
         handleChangeVariant()
       }
+    } catch (error: any) {
+      throw new Error(error)
     }
   }
 
