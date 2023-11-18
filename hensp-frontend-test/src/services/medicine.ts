@@ -3,8 +3,8 @@ import { type medicineForm } from '../types/medicineForm'
 
 const API = 'https://backend-dummy.hospitaldeespecialidades.com.sv'
 
-export const getMedicine = async (token: string): Promise<MedicineTypes[]> => {
-  const response = await fetch(`${API}/api/medicamentos`, {
+export const getMedicine = async (token: string, search: string): Promise<MedicineTypes[]> => {
+  const response = await fetch(`${API}/api/medicamentos?filter=${search}&limit=999`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`
@@ -12,6 +12,7 @@ export const getMedicine = async (token: string): Promise<MedicineTypes[]> => {
   })
   const data = await response.json()
   const medicine = await data.medicamento
+
   return medicine
 }
 

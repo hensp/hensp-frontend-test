@@ -4,4 +4,6 @@ export type UserTypes = {
     nombre: string
     username: string
   }
+  statusCode?: number
+  message?: string
 } | null
