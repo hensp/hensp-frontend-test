@@ -1,0 +1,42 @@
+.auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 300px;
+    height: calc(100vh - 200px);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    width: 100%;
+    border: 0.5px solid gray;
+    padding: 20px 20px;
+    border-radius: 4px;
+    box-shadow: -1px 0px 17px -5px rgba(0,0,0,0.82);
+}
+
+.form-label{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    color: black;
+    font-weight: 500;
+}
+.form-label input{
+    padding: 3px 5px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px gray solid;
+    background-color: white;
+}
+.form-label input:focus{
+    border: 1px solid blue;
+}
