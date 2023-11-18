@@ -11,6 +11,8 @@ export const Auth = (): JSX.Element => {
     password: ''
   })
 
+  const [info, setInfo] = useState('')
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target
     setLogin({
@@ -27,6 +29,13 @@ export const Auth = (): JSX.Element => {
     e.preventDefault()
     try {
       const response = await loginService(login)
+      if ((response?.statusCode !== null) && response?.statusCode === 400) {
+        setInfo(`${response.message?.[0]} ${response.message?.[1]}}`)
+        return
+      } else if ((response?.statusCode !== null) && response?.statusCode === 401) {
+        setInfo(response.message ?? '')
+        return
+      }
       handleUser(response)
       navigate('/home')
     } catch (error) {
@@ -36,6 +45,7 @@ export const Auth = (): JSX.Element => {
 
   return (
     <section className={styles.auth}>
+      {info}
         <form onSubmit={(e) => {
           void handleLogin(e)
         }} className={styles.form}>
